@@ -113,15 +113,14 @@ echo $rest;
 
 
 <?php
-// Define a function named password_generate that takes the number of characters as input
+
 function password_generate($chars) 
 {
-  // Define a string containing all possible characters for the password
+  
   $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
-  // Shuffle the characters in the string and extract a substring of length $chars
+  
   return substr(str_shuffle($data), 0, $chars);
 }
-// Call the password_generate function with 7 characters and echo the generated password
 echo password_generate(7)."\n";
 ?>
 
@@ -134,8 +133,7 @@ echo password_generate(7)."\n";
 <?php
 
 $str = 'that new trainee is so genious.';
-// Use preg_replace function to replace the first occurrence of the word 'that' with 'The' in the string.
-// The '1' parameter specifies that only the first occurrence of 'the' should be replaced.
+
 echo preg_replace('/that/', 'the', $str, 1)."\n"; 
 ?>
 
@@ -143,14 +141,11 @@ echo preg_replace('/that/', 'the', $str, 1)."\n";
 <br>
 <!-- //# Q9  -->
 <?php
-// Define two strings to compare
 $str1 = 'football';
 $str2 = 'footboll';
 
-// Calculate the position of the first difference between the two strings
 $str_pos = strspn($str1 ^ $str2, "\0");
 
-// Output the position of the first difference along with the characters at that position
 printf('First difference between two strings at position %d: "%s" vs "%s"',
     $str_pos, $str1[$str_pos], $str2[$str_pos]);
 printf("\n");
@@ -160,13 +155,12 @@ printf("\n");
 <br>
 <!-- //# Q10  -->
 <?php
-// Define a multi-line string containing the lyrics of a song
+
 $str = "Twinkle, twinkle, little star,\nHow I wonder what you are.\nUp above the world so high,\nLike a diamond in the sky.";
 
-// Explode the multi-line string into an array using "" as the delimiter
+
 $arra1 = explode("<br>", $str);
 
-// Display the array containing the lines of the song
 var_dump($arra1);
 ?>
 
@@ -178,7 +172,7 @@ var_dump($arra1);
 
 $ch = 'a';
 $next_ch = ++$ch; 
-if (strlen($next_ch) > 1) { // if you go beyond z or Z reset to a or A
+if (strlen($next_ch) > 1) { 
  $next_ch = $next_ch[0];
 }
 echo $next_ch;
@@ -191,15 +185,10 @@ echo $next_ch;
 
 <?php
 $original_string = 'The brown fox'; 
-// Define the original string.
 $string_to_insert ='quick'; 
-// Define the string to be inserted.
 $insert_pos = 4; 
-// Define the position where the insertion will occur.
 $new_string = substr_replace($original_string, $string_to_insert.' ', $insert_pos, 0); 
-// Insert the substring at the specified position in the original string.
 echo $new_string."\n"; 
-// Output the modified string.
 ?>
 
 
@@ -211,7 +200,7 @@ echo $new_string."\n";
 $x = '000547023.24';
 
 $str1 = ltrim($x, '0');
-// Remove leading zeros from the string.
+
 echo $str1."\n";
 ?>
 
@@ -220,10 +209,8 @@ echo $str1."\n";
 <!-- //# Q14 -->
 <?php
 $my_str = 'The quick brown fox jumps over the lazy dog';
-// Define the original string.
 
 echo str_replace("fox", " ", $my_str)."\n";
-// Replace all occurrences of "fox" with a space in the original string and output the result.
 ?>
 
 <!-- ===============================================================================-->
@@ -232,10 +219,8 @@ echo str_replace("fox", " ", $my_str)."\n";
 
 <?php
 $my_str = 'The quick brown fox jumps over the lazy dog----';
-// Define the original string.
 
 echo rtrim($my_str, '-')."\n";
-// Remove trailing dashes from the original string and output the result.
 ?>
 
 
@@ -254,10 +239,8 @@ echo preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%&-]/s', '', $title);
 <!-- //# Q17 -->
 <?php
 $my_string = 'The quick brown fox jumps over the lazy dog';
-// Define the original string.
 
 echo implode(' ', array_slice(explode(' ', $my_string), 0, 5))."\n";
-// Split the string into an array of words, take the first 5 elements, join them with a space, and output the result.
 ?>
 
 <!-- ===============================================================================-->
@@ -266,10 +249,8 @@ echo implode(' ', array_slice(explode(' ', $my_string), 0, 5))."\n";
 
 <?php
 $str1 = "2,543.12";
-// Define the original string.
 
 $x = str_replace( ',', '', $str1);
-// Remove all commas from the original string.
 
 echo $x;
 ?>
@@ -280,13 +261,10 @@ echo $x;
 
 <?php
 for ($x = ord('a'); $x <= ord('z'); $x++)
-// Loop through ASCII values of lowercase letters from 'a' to 'z'.
 
  echo chr($x);
-// Convert ASCII value to corresponding character and echo.
 
  echo "\n";
-// Output newline character.
 ?>
 
 <!-- ===================================== second tasks ==========================================-->
@@ -303,7 +281,6 @@ for ($x = ord('a'); $x <= ord('z'); $x++)
       } 
   } 
     
-  // Driver code 
   $year = 2024; 
     
   if (isLeapYear($year)) { 
@@ -329,7 +306,6 @@ for ($x = ord('a'); $x <= ord('z'); $x++)
 } 
 } 
     
-  // Driver code 
   $temp = 21; 
     
   if (weatherCheck($temp)) { 
@@ -347,7 +323,6 @@ for ($x = ord('a'); $x <= ord('z'); $x++)
 
 <?php
 
-// Define two numbers
 $num1 = 2;
 $num2 = 2;
 
@@ -371,7 +346,6 @@ $triple= $num1* $num2* $num2;
 
 <?php
 
-// Define two numbers
 $num1 = 15;
 $num2 = 15;
 $sum = $num1 + $num2;
@@ -396,7 +370,6 @@ if (($sum == 30)
 
 <?php
 
-// Define two numbers
 $num = 15;
 
 if (($num > 0 && $num % 3==0)  
@@ -416,7 +389,6 @@ if (($num > 0 && $num % 3==0)
 
 <?php
 
-// Define two numbers
 $num = 25;
 
 if (($num >= 20 && $num <=50)  
@@ -437,14 +409,12 @@ if (($num >= 20 && $num <=50)
 
 <?php 
   
-// Input the three numbers 
-// and store it in variable 
+
   
 $number1 = 12; 
 $number2 = 7; 
 $number3 = 15; 
   
-// Using the max function to find the largest number 
   
 $maxNumber = max($number1, $number2, $number3); 
 echo "The largest number among three is: $maxNumber\n"; 
@@ -564,7 +534,6 @@ if(isset($_POST['submit']))
 
 <?php
 
-// Define two numbers
 $age = 25;
 
 if (($age >=18)  
@@ -585,7 +554,6 @@ if (($age >=18)
 
 <?php
 
-// Define two numbers
 $num = 10;
 
 if (($num >=0)  
@@ -604,9 +572,7 @@ if (($num >=0)
 <!-- //# Q12 -->
 
 <?php
-// PHP Script to Calculate Total Marks of Student and Display Grade
 
-// These are the marks of five subjects
 $sub_1 = 95;
 $sub_2 = 85;
 $sub_3 = 74;
@@ -617,7 +583,6 @@ $total = NULL;
 $average = NULL;
 $grade = NULL;
 
-// It will calculate total, average, percentage, and grade
 $total = $sub_1 + $sub_2 + $sub_3 + $sub_4 + $sub_5;
 $average = $total / 5.0;
 
@@ -632,7 +597,6 @@ else if ($average >= 50 && $average < 70)
 else
     $grade = "F";
 
-// It will print the final output
 
 echo "The Average marks = " . $average . "\n";
 
